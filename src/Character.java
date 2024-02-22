@@ -1,11 +1,11 @@
-public abstract class Characters {
+public abstract class Character {
     private int classID;
     private String characterClass;
     private int damage;
     private int health;
     private int money;
 
-    public Characters(int classID, String characterClass, int damage, int health, int money) {
+    public Character(int classID, String characterClass, int damage, int health, int money) {
         this.classID = classID;
         this.characterClass = characterClass;
         this.damage = damage;

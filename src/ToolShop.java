@@ -1,4 +1,4 @@
-public class ToolShop extends NormalLocation {
+public class ToolShop extends FriendlyLocation {
     public ToolShop(Player player) {
         super(player, "Tool Shop");
     }

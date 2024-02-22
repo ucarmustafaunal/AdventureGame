@@ -1,5 +1,5 @@
-public class NormalLocation extends Location{
-    public NormalLocation(Player player, String name) {
+public class FriendlyLocation extends Location{
+    public FriendlyLocation(Player player, String name) {
         super(player, name);
     }
 

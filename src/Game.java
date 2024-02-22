@@ -21,8 +21,11 @@ public class Game {
             player.getPlayerStats();
             System.out.println("-------------------------------------------------------------------");
             System.out.println("Locations : ");
-            System.out.println("1 - Safe House");
-            System.out.println("2 - Tool Shop");
+            System.out.println("1 - Safe House --> Safe place to stay and restore your health");
+            System.out.println("2 - Tool Shop --> You can buy Weapons or Armors");
+            System.out.println("3 - Cave --> There are Zombies to kill and Foods to earn");
+            System.out.println("4 - Forest --> There are Vampires to kill and Woods to earn");
+            System.out.println("5 - River --> There are Bears to kill and Water to earn");
             System.out.println("0 - End the Adventure");
             System.out.println("Select a destination");
             int locationSelection = inputScanner.nextInt();
@@ -36,15 +39,24 @@ public class Game {
                 case 2:
                     location = new ToolShop(player);
                     break;
+                case 3:
+                    location = new Cave(player);
+                    break;
+                case 4:
+                    location = new Forest(player);
+                    break;
+                case 5:
+                    location = new River(player);
+                    break;
                 default:
-                    location = new SafeHouse(player);
+                    System.out.println("*** Why are you looking around? ***");
             }
             if (location == null){
-                System.out.println("You leaving this dark and misty island too early. How miserable are you!");
+                System.out.println("*** You leaving this dark and misty island too early. How miserable are you! ***");
                 break;
             }
             if(!location.onLocation()){
-                System.out.println("You died!");
+                System.out.println("*** You died! ***");
                 break;
             }
         }

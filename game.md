@@ -4,11 +4,11 @@ Java ile metin tabanlı bir macera oyunu yapıyoruz.
 
 ## KARAKTERLER
 
-![Characters.Characters](/images/characters.png "Characters.Characters")
+![Character(/images/character.png "Character)
 
 ## CANAVARLAR
 
-![Monsters](/images/monsters.png "Monsters")
+![Monster](/images/monsters.png "Monster")
 
 ## SİLAHLAR
 

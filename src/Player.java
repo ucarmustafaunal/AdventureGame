@@ -15,15 +15,15 @@ public class Player {
     }
 
     public void selectCharacter(){
-        Characters[] characterList= {new Samurai(), new Archer(), new Knight()};
+        Character[] characterList= {new Samurai(), new Archer(), new Knight()};
 
         System.out.println("###################################################################");
-        for (Characters characters : characterList){
-            System.out.println( "ID : "+characters.getClassID()+
-                                "\t\tClass : "+characters.getCharacterClass()+
-                                "\t\tDamage : "+characters.getDamage()+
-                                "\t\tHealth : "+characters.getHealth()+
-                                "\t\tMoney : "+characters.getMoney());
+        for (Character character : characterList){
+            System.out.println( "ID : "+ character.getClassID()+
+                                "\t\tClass : "+ character.getCharacterClass()+
+                                "\t\tDamage : "+ character.getDamage()+
+                                "\t\tHealth : "+ character.getHealth()+
+                                "\t\tMoney : "+ character.getMoney());
         }
         System.out.println("Select a class to play with.");
         int characterSelection = input.nextInt();
@@ -95,11 +95,11 @@ public class Player {
         this.characterClass = characterClass;
     }
 
-    public void playerClass(Characters characters){
-        this.setCharacterClass(characters.getCharacterClass());
-        this.setDamage(characters.getDamage());
-        this.setHealth(characters.getHealth());
-        this.setMoney(characters.getMoney());
+    public void playerClass(Character character){
+        this.setCharacterClass(character.getCharacterClass());
+        this.setDamage(character.getDamage());
+        this.setHealth(character.getHealth());
+        this.setMoney(character.getMoney());
     }
 
     public Inventory getInventory() {
