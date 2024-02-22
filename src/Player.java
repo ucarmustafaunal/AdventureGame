@@ -6,10 +6,12 @@ public class Player {
     private int money;
     private String name;
     private String characterClass;
-    private Scanner input = new Scanner(System.in);
+    protected Scanner input = new Scanner(System.in);
+    private Inventory inventory;
 
     public Player(String name){
         this.name = name;
+        this.inventory = new Inventory();
     }
 
     public void selectCharacter(){
@@ -43,8 +45,18 @@ public class Player {
                 "\nMoney  : "+this.getMoney());
     }
 
+    public void getPlayerStats(){
+        System.out.println("Adventure is waiting for you...\n"+
+                "\nWeapon : "+this.getInventory().getWeapon().getName()+
+                "\nArmor : "+this.getInventory().getArmor().getName()+
+                "\nBlocking Rate : "+this.getInventory().getArmor().getArmorRate()+
+                "\nDamage : "+this.getDamage()+
+                "\nHealth : "+this.getHealth()+
+                "\nMoney  : "+this.getMoney());
+    }
+
     public int getDamage() {
-        return damage;
+        return damage + this.getInventory().getWeapon().getDamage();
     }
 
     public void setDamage(int damage) {
@@ -90,4 +102,11 @@ public class Player {
         this.setMoney(characters.getMoney());
     }
 
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
 }
