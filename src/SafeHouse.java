@@ -7,6 +7,7 @@ public class SafeHouse extends FriendlyLocation {
     public boolean onLocation(){
         System.out.println("###################################################################");
         System.out.println("You're at the Safe House. Your health is restored!");
+        this.getPlayer().setHealth(this.getPlayer().getDefaultHealth());
         return true;
     }
 }

@@ -16,6 +16,7 @@ public class Game {
         player.selectCharacter();
 
         Location location = null;
+        System.out.println("New adventure beings...");
         while(true){
             System.out.println("###################################################################");
             player.getPlayerStats();
@@ -56,7 +57,7 @@ public class Game {
                 break;
             }
             if(!location.onLocation()){
-                System.out.println("*** You died! ***");
+                System.out.println("*** Game Ended ***");
                 break;
             }
         }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Player {
     private int damage;
     private int health;
+    private int defaultHealth;
     private int money;
     private String name;
     private String characterClass;
@@ -46,17 +47,20 @@ public class Player {
     }
 
     public void getPlayerStats(){
-        System.out.println("Adventure is waiting for you...\n"+
+        System.out.println(
                 "\nWeapon : "+this.getInventory().getWeapon().getName()+
                 "\nArmor : "+this.getInventory().getArmor().getName()+
                 "\nBlocking Rate : "+this.getInventory().getArmor().getArmorRate()+
-                "\nDamage : "+this.getDamage()+
+                "\nDamage : "+this.getTotalDamage()+
                 "\nHealth : "+this.getHealth()+
                 "\nMoney  : "+this.getMoney());
     }
+    public int getTotalDamage(){
+        return damage + this.getInventory().getWeapon().getDamage();
+    }
 
     public int getDamage() {
-        return damage + this.getInventory().getWeapon().getDamage();
+        return damage;
     }
 
     public void setDamage(int damage) {
@@ -95,10 +99,19 @@ public class Player {
         this.characterClass = characterClass;
     }
 
+    public int getDefaultHealth() {
+        return defaultHealth;
+    }
+
+    public void setDefaultHealth(int defaultHealth) {
+        this.defaultHealth = defaultHealth;
+    }
+
     public void playerClass(Character character){
         this.setCharacterClass(character.getCharacterClass());
         this.setDamage(character.getDamage());
         this.setHealth(character.getHealth());
+        this.setDefaultHealth(character.getHealth());
         this.setMoney(character.getMoney());
     }
 
